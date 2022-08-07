@@ -28,3 +28,16 @@ export const formatDateLong = (date: string): string => {
   let parsedDate = DateFns.parse(date, "yyyy-MM", new Date());
   return DateFns.format(parsedDate, "MMMM 'de' yyyy", { locale: ptBr });
 };
+
+export const addMonthToString = (date: string, amount: number): string => {
+  let parsedDate = DateFns.parse(date, "yyyy-MM", new Date());
+  let addMonth = DateFns.addMonths(parsedDate, amount);
+  return DateFns.format(addMonth, "yyyy-MM");
+};
+
+export const stringToDate = (date: string): Date => {
+  console.log(date);
+  let parsedDate = DateFns.parseISO(date);
+  console.log(parsedDate);
+  return parsedDate;
+};
